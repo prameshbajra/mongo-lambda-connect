@@ -1,0 +1,22 @@
+
+AWSTemplateFormatVersion: 2010-09-09
+Description: >-
+  mongo-node-lambda-api
+
+
+Transform:
+- AWS::Serverless-2016-10-31
+
+Resources:
+  MongoFuntion:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: src/handlers/mongo.handler
+      Runtime: nodejs18.x
+      Architectures:
+      - x86_64
+      MemorySize: 128
+      Timeout: 100
+      FunctionUrlConfig:
+        AuthType: NONE
+  
